@@ -37,7 +37,7 @@ if final_output:
 	pretty_output = ''.join(subprocess.check_output("git log --pretty='%s'"+ final_output, shell=True).decode())
 	os.chdir('../..')
 	subprocess.run('git add -A .', shell=True)
-	pretty_output = "library: Updated Commit ID"+'\n'+'\n'+ pretty_output
+	pretty_output = "Updated Commit ID"+'\n'+'\n'+ pretty_output
 	cmd = 'git commit -m "%s"' % pretty_output
 	pipe = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	(out, error) = pipe.communicate()
